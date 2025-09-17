@@ -1,0 +1,29 @@
+; ----------------------------------------
+; Programa: Maior e Menor número da lista
+; Autor: Ítalo Romero S M
+; Objetivo: Percorrer uma lista e encontrar
+;           o maior número
+; ----------------------------------------
+
+          ORG 0          ; início do programa
+
+          LDA NUM1       ; carrega primeiro número
+          SUB NUM2       ; faz NUM1 - NUM2
+          JN SEGUNDO     ; se resultado < 0, NUM2 é maior
+
+; Se NUM1 >= NUM2
+          LDA NUM1
+          STA MAIOR
+          JMP FIM
+
+SEGUNDO:  LDA NUM2       ; NUM2 é maior
+          STA MAIOR
+
+FIM:      HLT            ; fim do programa
+
+; ----------------------------------------
+; ÁREA DE DADOS
+; ----------------------------------------
+NUM1:     DEC 7          ; primeiro número
+NUM2:     DEC 12         ; segundo número
+MAIOR:    DEC 0          ; aqui será guardado o resultado
